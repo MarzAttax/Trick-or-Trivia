@@ -1,0 +1,2 @@
+# Trick-or-Trivia
+Trick or Trivia is a trivia-based halloween candy dispenser. I built this project for Element1 as an assignment for their annual halloween project showcase. You can find the full project at the following link: http://www.element14.com/community/community/raspberry-pi/raspberrypi_projects/blog/2015/09/03/trick-or-trivia-halloween-candy-dispenser-001--project-introduction?ICID=piproj-topbanner  Follow me on Youtube: https://www.youtube.com/channel/UCRGqoLoHbrnAUZuMbgJ9DJw
