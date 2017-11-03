@@ -1,3 +1,5 @@
+# This could be used to loop background music
+
 import pygame
 
 audio_path = '/home/pi/Desktop/audio/ambient.mp3'
