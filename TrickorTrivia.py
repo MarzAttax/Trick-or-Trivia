@@ -211,12 +211,12 @@ try:    # try ensures that GPIO will be cleared properly even if the app crashes
 			print("candy")  # When testing on desktop, comment all other lines in this method and leave the print to avoid error.
 
 
-		# play sound from whatever file is at parameter dirrectory 
+		# play sound from whatever file is at parameter dirrectory. I used this to play a sound effect at multiple points.
 		def playSound(self, fileName):
 			pygame.mixer.init()
 			pygame.mixer.music.load(fileName)
 			pygame.mixer.music.set_volume(1.0)
-			pygame.mixer.music.play(1)
+			pygame.mixer.music.play(1) # change this value if you want to audio to loop.
 
 
 		# Kills buttons and labels from page after answer is selected
