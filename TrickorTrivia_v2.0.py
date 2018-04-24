@@ -3,12 +3,11 @@ import RPi.GPIO as GPIO         # import to enable GPIO commands
 import time                     # used for sleep commands
 import sys                      # if you used an exit option, you would need this
 import pygame                   # used to play audio
-#import pigpio          I dont think I used this
 from pygame.locals import *     # not sure what this was used for
 from random import randint      # a random number is used to select a random quiz
 ##GPIO.setwarnings(False)       # I don't think this is necessary if GPIO is cleaned upon exit/crash
 
-#pi = pigpio.pi() I dont think I used this
+
 
 correct_audio_path = '/home/pi/Desktop/Projects/ToT/audio/correct.mp3'
 incorrect_audio_path = '/home/pi/Desktop/Projects/ToT/audio/incorrect.mp3'
