@@ -1,4 +1,4 @@
-# Set the platform you are running on
+# Set the platform you are running on, comment out the rest.
 
 # PLATFORM = "RPI"
 PLATFORM = "LINUX"
