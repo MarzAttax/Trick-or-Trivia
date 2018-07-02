@@ -1,12 +1,12 @@
 # Set the platform you are running on
 
-# PLATFORM = "PI"
+# PLATFORM = "RPI"
 PLATFORM = "LINUX"
 # PLATFORM = "PC"
 # PLATFORM = "MAC"
 
 
-if (PLATFORM == "PI"):
+if (PLATFORM == "RPI"):
     import RPi.GPIO as GPIO  # import to enable GPIO commands
 
     correct_audio_path = '/home/pi/Desktop/Projects/ToT/audio/correct.mp3'
@@ -255,7 +255,7 @@ root.overrideredirect(True)  # This takes up the whole screen and removes x to e
 root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(),
                                    root.winfo_screenheight()))  # when I was testing on desktop I replaced {0}x{1}+0+0 with the resolution of my touchscreen
 root.focus_set()  # <-- move focus to this widget
-if (PLATFORM == "PI"):
+if (PLATFORM == "FPI"):
     root.configure(background='black', cursor="none")  # removes cursor for a cleaner look, relies on touchscreen. Remove cursor="none" if you need a mouse.
 else:
     root.configure(background='black')
