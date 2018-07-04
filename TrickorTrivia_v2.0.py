@@ -1,27 +1,37 @@
 # Check what platform it is running on.
 try:
     import RPi.GPIO as GPIO
-    correct_audio_path = '/home/pi/Desktop/Projects/ToT/audio/correct.mp3'
-    incorrect_audio_path = '/home/pi/Desktop/Projects/ToT/audio/incorrect.mp3'
-    game_open = '/home/pi/Desktop/Projects/ToT/audio/What is my purpose.mp3'
+    import os
+
+    cwd = os.getcwd()
+    audio_folder = os.path.join(cwd, "audio")
+
+    correct_audio_path = os.path.join(audio_folder, "correct.mp3")
+    incorrect_audio_path = os.path.join(audio_folder, "incorrect.mp3")
+    game_open = os.path.join(audio_folder, "What is my purpose.mp3")
 
     onPi = True
 
 except: # Either developing on a pc or OS doesn't support GPIO, replace libraries with fake ones
     print("You are either not on a Raspberry Pi, or on an OS that doesn't support GPIO. fake_rpi will be used")
+
     import sys
     import fake_rpi
+    import os
 
     sys.modules['RPi'] = fake_rpi.RPi  # Fake RPi (GPIO)
     sys.modules['smbus'] = fake_rpi.smbus  # Fake smbus (I2C)
     GPIO = fake_rpi.RPi.GPIO
 
-    correct_audio_path = '/home/kristian/Projects/Trick-or-Trivia/cow.mp3'
-    incorrect_audio_path = '/home/kristian/Projects/Trick-or-Trivia/cow.mp3'
-    game_open = '/home/kristian/Projects/Trick-or-Trivia/cow.mp3'
+    cwd = os.getcwd()
+    audio_folder = os.path.join(cwd, "audio")
+
+    correct_audio_path = os.path.join(audio_folder, "cow.mp3")
+    incorrect_audio_path = os.path.join(audio_folder, "cow.mp3")
+    game_open = os.path.join(audio_folder, "cow.mp3")
+    print(game_open)
 
     onPi = False
-
 
 
 from tkinter import *  # import tkinter library for GUI, from shortens function calls
