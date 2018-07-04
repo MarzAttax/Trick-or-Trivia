@@ -1,20 +1,14 @@
-# Set the platform you are running on, comment out the rest.
-
-# PLATFORM = "RPI"
-PLATFORM = "LINUX"
-# PLATFORM = "PC"
-# PLATFORM = "MAC"
-
-
-if (PLATFORM == "RPI"):
-    import RPi.GPIO as GPIO  # import to enable GPIO commands
-
+# Check what platform it is running on.
+try:
+    import RPi.GPIO as GPIO
     correct_audio_path = '/home/pi/Desktop/Projects/ToT/audio/correct.mp3'
     incorrect_audio_path = '/home/pi/Desktop/Projects/ToT/audio/incorrect.mp3'
     game_open = '/home/pi/Desktop/Projects/ToT/audio/What is my purpose.mp3'
 
-elif (PLATFORM == "LINUX"):
-    # Replace libraries with fake ones
+    onPi = True
+
+except: # Either developing on a pc or OS doesn't support GPIO, replace libraries with fake ones
+    print("You are either not on a Raspberry Pi, or on an OS that doesn't support GPIO. fake_rpi will be used")
     import sys
     import fake_rpi
 
@@ -26,11 +20,9 @@ elif (PLATFORM == "LINUX"):
     incorrect_audio_path = '/home/kristian/Projects/Trick-or-Trivia/cow.mp3'
     game_open = '/home/kristian/Projects/Trick-or-Trivia/cow.mp3'
 
-elif (PLATFORM == "PC"):
-    print("NOT TESTED!")
+    onPi = False
 
-elif (PLATFORM == "MAC"):
-    print("NOT TESTED!")
+
 
 from tkinter import *  # import tkinter library for GUI, from shortens function calls
 import time  # used for sleep commands
@@ -255,7 +247,7 @@ root.overrideredirect(True)  # This takes up the whole screen and removes x to e
 root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(),
                                    root.winfo_screenheight()))  # when I was testing on desktop I replaced {0}x{1}+0+0 with the resolution of my touchscreen
 root.focus_set()  # <-- move focus to this widget
-if (PLATFORM == "FPI"):
+if (onPi == True):
     root.configure(background='black', cursor="none")  # removes cursor for a cleaner look, relies on touchscreen. Remove cursor="none" if you need a mouse.
 else:
     root.configure(background='black')
