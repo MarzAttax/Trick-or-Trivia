@@ -12,7 +12,7 @@ try:
 
     onPi = True
 
-except: # Either developing on a pc or OS doesn't support GPIO, replace libraries with fake ones
+except:  # Either developing on a pc or OS doesn't support GPIO, replace libraries with fake ones
     print("You are either not on a Raspberry Pi, or on an OS that doesn't support GPIO. fake_rpi will be used")
 
     import sys
@@ -32,7 +32,6 @@ except: # Either developing on a pc or OS doesn't support GPIO, replace librarie
     print(game_open)
 
     onPi = False
-
 
 from tkinter import *  # import tkinter library for GUI, from shortens function calls
 import time  # used for sleep commands
