@@ -26,9 +26,9 @@ except:  # Either developing on a pc or OS doesn't support GPIO, replace librari
     cwd = os.getcwd()
     audio_folder = os.path.join(cwd, "audio")
 
-    correct_audio_path = os.path.join(audio_folder, "cow.mp3")
-    incorrect_audio_path = os.path.join(audio_folder, "cow.mp3")
-    game_open = os.path.join(audio_folder, "cow.mp3")
+    correct_audio_path = os.path.join(audio_folder, "correct.mp3")
+    incorrect_audio_path = os.path.join(audio_folder, "incorrect.mp3")
+    game_open = os.path.join(audio_folder, "correct.mp3")
     print(game_open)
 
     onPi = False
@@ -44,8 +44,8 @@ from random import randint  # a random number is used to select a random quiz
 
 
 # question, choice1, choice2, chioce3, choice4, correct answer, difficulty [difficulty][selection][data]
-# EASY
-quiz = [[["Casper is a friendly ____!", "Ghost", "Ghast", "Ghoul", "Gremlin", 1],
+# EASY0
+quiz = [[["the location that was taken out of fortnite \n at the begining of season 4 was called", "dusty depot", "dusty divot", "loot lake", "PUBG", 1],
          ["Dracula is a _______.", "Snake", "Zombie", "Vampire", "pokemon", 3],
          ["Put a light in the _______ \nto light up its face.", "window", "pumpkin", "doorway", "refrigerator", 2],
          ["Witches love to fly around \non a _____.", "vacuum cleaner", "jet plane", "dragon", "broomstick", 4],
@@ -67,7 +67,7 @@ quiz = [[["Casper is a friendly ____!", "Ghost", "Ghast", "Ghoul", "Gremlin", 1]
          ["What type of vegetable is disliked by \nvampires and is used to frighten them away?", "Carrots", "Ginger", "Garlic", "Salt", 3]],  # end Medium
 
         # HARD
-        [["Pumpkins are made up of \nhow much water?", " 30% ", " 50% ", " 90% ", " OVER 9000% ", 3],
+        [["what day did the rocket \nlaunch?", " monday, may 1 ", " saturday, july 3 ", " friday, june 30 ", " thursday, december 12 ", 3],
          ["The largest pumpkin ever \ngrown weighed how much?", "844 lbs", "1,140 lbs", "2,091 lbs", "3,000,000 lbs ", 3],
          ["Pumpkins contain \nsignificant amounts of: ", "potassium and Vit A", "magnesium and Vit C", "folate and Vit D", "free shavacado", 1],
          ["What variety is the \ntraditional Halloween pumpkin?", "Autumn Gold", "Conneticut Field", "Baby Boo", "Orange", 2],
